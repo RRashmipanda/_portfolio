@@ -6,7 +6,7 @@ export const Hero = () => {
     <section className="pt-32 pb-16">
       <div className="flex flex-col md:flex-row items-start gap-8">
         <div className="flex-1">
-          <h1 className="text-5xl font-bold mb-4 tracking-tight">Your Name</h1>
+          <h1 className="text-5xl font-bold mb-4 tracking-tight">Rashmi ranjan panda</h1>
           <p className="text-xl text-foreground mb-2">
             Building{" "}
             <a
@@ -29,7 +29,7 @@ export const Hero = () => {
             & other cool things
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Senior Software Engineer building SaaS products and web apps. Find me on{" "}
+            Fullstack developer building SaaS products and web apps. Find me on{" "}
             <a
               href="https://twitter.com"
               target="_blank"
@@ -45,7 +45,7 @@ export const Hero = () => {
         <div className="shrink-0">
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
             <img
-              src={"https://via.placeholder.com/150"}
+              src={"/photo.jpg"}
               alt="Profile"
               className="w-32 h-32 rounded-2xl border-2 border-border hover:border-accent transition-colors cursor-pointer"
             />

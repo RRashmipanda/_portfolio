@@ -1,7 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -13,15 +14,8 @@ const navItems = [
 
 export const Navigation = () => {
   const location = useLocation();
-  const [theme, setTheme] = useState<"light" | "dark">("light");
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const root = window.document.documentElement;
-    root.classList.remove("light", "dark");
-    root.classList.add(theme);
-  }, [theme]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,10 +24,6 @@ export const Navigation = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
-  };
 
   return (
     <nav
@@ -70,33 +60,24 @@ export const Navigation = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden"
-          >
-            {mobileMenuOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
-          </Button>
+          <div className="flex items-center gap-3">
+            {/* Mobile Menu Button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden"
+            >
+              {mobileMenuOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
+            </Button>
 
-          {/* Theme Toggle */}
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleTheme}
-            className="rounded-full hover:rotate-180 transition-transform duration-500"
-          >
-            {theme === "light" ? (
-              <Moon className="h-5 w-5" />
-            ) : (
-              <Sun className="h-5 w-5" />
-            )}
-          </Button>
+            {/* Theme Toggle */}
+            <ThemeToggle />
+          </div>
         </div>
 
         {/* Mobile Menu */}
