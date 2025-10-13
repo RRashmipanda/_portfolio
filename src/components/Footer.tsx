@@ -43,7 +43,7 @@ export const Footer = () => {
           </a>
         </div>
         <p className="text-sm text-muted-foreground">
-          © {currentYear} Your Name. All rights reserved.
+          © {currentYear} Rashmi ranjan panda. All rights reserved.
         </p>
       </div>
     </footer>
