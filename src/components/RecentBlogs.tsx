@@ -4,14 +4,15 @@ import { Link } from "react-router-dom";
 
 const blogs = [
   {
-    title: "Ace the Javascript Interview - Practical questions to help you clear your next interview",
+    title: "Mastering Python: A Comprehensive Guide with Theory and Code",
     views: "18,172",
-    slug: "ace-javascript-interview",
+    slug: "mastering-python-guide",
   },
   {
     title: "Free portfolio website template that gets you hired in 2021",
     views: "6,243",
     slug: "developer-portfolio-website",
+    Link: "https://github.com/RRashmipanda/pmp/blob/main/prd.md",
   },
 ];
 
@@ -25,7 +26,7 @@ export const RecentBlogs = () => {
             key={blog.slug}
             className="p-6 hover:shadow-md transition-shadow cursor-pointer"
           >
-            <Link to={`/blog/${blog.slug}`} className="block">
+            <Link to={`https://github.com/RRashmipanda/Python`} className="block">
               <div className="flex justify-between items-start gap-4">
                 <h3 className="text-lg font-medium leading-snug flex-1">
                   {blog.title}

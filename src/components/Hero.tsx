@@ -31,12 +31,12 @@ export const Hero = () => {
           <p className="text-lg text-muted-foreground leading-relaxed">
             Fullstack developer building SaaS products and web apps. Find me on{" "}
             <a
-              href="https://twitter.com"
+              href="https://www.linkedin.com/in/rashmi-ranjan-panda-5b3776209?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
               target="_blank"
               rel="noopener noreferrer"
               className="text-accent hover:underline inline-flex items-center gap-1"
             >
-              twitter
+              linkdein
               <ExternalLink className="h-3 w-3" />
             </a>{" "}
             for tech updates and memes.

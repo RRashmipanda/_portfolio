@@ -4,35 +4,35 @@ import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    name: "Moonbeam",
+    name: "LearnTrack ",
     description:
       "Never write from scratch again. Kickstart your next great writing piece with Moonbeam. Your long-form writing AI assistant.",
-    tags: ["Front-end", "GPT-3", "Next.js", "React", "TailwindCSS", "Chrome Extension"],
-    url: "https://example.com",
+    tags: ["Backend", "Node.js", "Express", "MongoDB","razorpay"],
+    url: "https://github.com/RRashmipanda/LearnTrack",
     icon: "📝",
   },
   {
-    name: "Aceternity",
+    name: "Vide_editor ",
     description:
       "Building modern applications that scale well and are easy to maintain. Cutting edge websites with a pinch of magic, and a lot of love.",
-    tags: ["Next.js", "React", "TailwindCSS", "Full-Stack"],
-    url: "https://example.com",
+    tags: ["Next.js", "React", "TailwindCSS", "prisma","ollama","shadcn/ui","mongoDB","authjs"],
+    url: "https://github.com/RRashmipanda/vide_editor",
     icon: "✨",
   },
   {
-    name: "Algochurn",
+    name: "Animal Aid",
     description:
       "Practice the most popular algorithmic questions and Front-end interview questions with an interactive IDE and learning environment.",
-    tags: ["Next.js", "React", "TailwindCSS", "Monaco", "Algorithms"],
-    url: "https://example.com",
+    tags: [ "React", "TailwindCSS", "TypeScript","MongoDB","Node.js","Express","cloudinary"],
+    url: "https://github.com/RRashmipanda/ANIMALAID_CLIENT",
     icon: "💻",
   },
   {
-    name: "Tailwind Master Kit",
+    name: "Blogvibe ",
     description:
       "Beautiful, Handcrafted, ready-to-use components and templates for your next Tailwind web app project.",
-    tags: ["TailwindCSS", "Components", "Templates"],
-    url: "https://example.com",
+    tags: ["Backend", "Node.js", "Express", "MongoDB","EJS","cloudinary","docker","aws"],
+    url: "https://github.com/RRashmipanda/Blogvibe",
     icon: "🎨",
   },
 ];
