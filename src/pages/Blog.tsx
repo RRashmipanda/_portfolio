@@ -2,7 +2,17 @@ import React from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { Grid, ExternalLink, Code, Play } from "lucide-react";
+import {
+  Grid,
+  ShoppingBag,
+  Briefcase,
+  GraduationCap,
+  Users,
+  Stethoscope,
+  Music,
+  ExternalLink,
+  Play,
+} from "lucide-react";
 
 const templates = [
   {
@@ -17,9 +27,9 @@ const templates = [
       "Admin product CRUD pages",
       "Payment / order status UI",
     ],
-    preview: "#preview-ecommerce",
-    docs: "/starters/ecommerce/components",
+    preview: "https://your-live-site.com/ecommerce",
     repo: "https://github.com/your-org/ecommerce-starter",
+    icon: <ShoppingBag size={36} className="text-gray-500 dark:text-gray-400" />,
   },
   {
     id: "portfolio",
@@ -28,9 +38,9 @@ const templates = [
     description:
       "Hero, project gallery, case-study layout, blog list and contact form — perfect for developers & designers.",
     features: ["Hero + CTA", "Project gallery", "Lightbox & case studies", "Blog listing"],
-    preview: "#preview-portfolio",
-    docs: "/starters/portfolio/components",
+    preview: "https://your-live-site.com/portfolio",
     repo: "https://github.com/your-org/portfolio-starter",
+    icon: <Briefcase size={36} className="text-gray-500 dark:text-gray-400" />,
   },
   {
     id: "lms",
@@ -44,9 +54,9 @@ const templates = [
       "Quizzes & scoring",
       "Instructor dashboard",
     ],
-    preview: "#preview-lms",
-    docs: "/starters/lms/components",
+    preview: "https://your-live-site.com/lms",
     repo: "https://github.com/your-org/lms-starter",
+    icon: <GraduationCap size={36} className="text-gray-500 dark:text-gray-400" />,
   },
   {
     id: "social",
@@ -55,9 +65,9 @@ const templates = [
     description:
       "Social feed, profile pages, post composer, likes/comments, and a simple realtime layer for reactions and notifications.",
     features: ["Feed & composer", "Profiles", "Notifications", "Realtime reactions"],
-    preview: "#preview-social",
-    docs: "/starters/social/components",
+    preview: "https://your-live-site.com/social",
     repo: "https://github.com/your-org/social-starter",
+    icon: <Users size={36} className="text-gray-500 dark:text-gray-400" />,
   },
   {
     id: "medical",
@@ -66,9 +76,9 @@ const templates = [
     description:
       "Doctor search, appointment booking, teleconsult UI, patient records and prescriptions — HIPAA-aware UI patterns (implement protections on backend).",
     features: ["Doctor directory", "Booking flow", "Patient records UI", "Teleconsult screens"],
-    preview: "#preview-medical",
-    docs: "/starters/medical/components",
+    preview: "https://your-live-site.com/medical",
     repo: "https://github.com/your-org/medical-starter",
+    icon: <Stethoscope size={36} className="text-gray-500 dark:text-gray-400" />,
   },
   {
     id: "gaana",
@@ -77,9 +87,9 @@ const templates = [
     description:
       "Music library, playlist management, persistent audio player, and discovery screens — built for mobile and desktop web.",
     features: ["Persistent player", "Playlists & library", "Discovery modules", "Now playing UI"],
-    preview: "#preview-gaana",
-    docs: "/starters/gaana/components",
+    preview: "https://your-live-site.com/gaana",
     repo: "https://github.com/your-org/gaana-starter",
+    icon: <Music size={36} className="text-gray-500 dark:text-gray-400" />,
   },
 ];
 
@@ -106,18 +116,12 @@ const TemplateCard = ({ t }: { t: (typeof templates)[0] }) => (
           {t.preview && (
             <a
               href={t.preview}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm font-medium px-3 py-2 rounded-md border hover:bg-gray-50 dark:hover:bg-gray-800 dark:border-gray-700"
             >
               <Play size={14} /> Preview
             </a>
-          )}
-          {t.docs && (
-            <Link
-              to={t.docs}
-              className="inline-flex items-center gap-2 text-sm font-medium px-3 py-2 rounded-md border hover:bg-gray-50 dark:hover:bg-gray-800 dark:border-gray-700"
-            >
-              <Code size={14} /> Components
-            </Link>
           )}
           {t.repo && (
             <a
@@ -132,9 +136,10 @@ const TemplateCard = ({ t }: { t: (typeof templates)[0] }) => (
         </div>
       </div>
 
+      {/* Right-side icon box */}
       <div className="shrink-0 ml-4 hidden md:block">
         <div className="w-36 h-24 rounded-lg bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900 border dark:border-gray-700 flex items-center justify-center">
-          <Grid size={36} className="text-gray-500 dark:text-gray-400" />
+          {t.icon || <Grid size={36} className="text-gray-500 dark:text-gray-400" />}
         </div>
       </div>
     </div>
