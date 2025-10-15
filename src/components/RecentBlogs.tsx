@@ -1,5 +1,4 @@
 import { Card } from "@/components/ui/card";
-import { Eye } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const blogs = [
@@ -7,12 +6,13 @@ const blogs = [
     title: "Mastering Python: A Comprehensive Guide with Theory and Code",
     views: "18,172",
     slug: "mastering-python-guide",
+    link: "https://github.com/RRashmipanda/Python",
   },
   {
-    title: "Free portfolio website template that gets you hired in 2021",
+    title: "How to Write a Product Requirement Document for a Software Project",
     views: "6,243",
-    slug: "developer-portfolio-website",
-    Link: "https://github.com/RRashmipanda/pmp/blob/main/prd.md",
+    slug: "prd-software-project",
+    link: "https://github.com/RRashmipanda/pmp/blob/main/prd.md",
   },
 ];
 
@@ -26,7 +26,12 @@ export const RecentBlogs = () => {
             key={blog.slug}
             className="p-6 hover:shadow-md transition-shadow cursor-pointer"
           >
-            <Link to={`https://github.com/RRashmipanda/Python`} className="block">
+            <a
+              href={blog.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
+            >
               <div className="flex justify-between items-start gap-4">
                 <h3 className="text-lg font-medium leading-snug flex-1">
                   {blog.title}
@@ -35,7 +40,7 @@ export const RecentBlogs = () => {
                   <span className="text-sm">{blog.views} views</span>
                 </div>
               </div>
-            </Link>
+            </a>
           </Card>
         ))}
       </div>
@@ -43,7 +48,7 @@ export const RecentBlogs = () => {
         to="/blog"
         className="text-accent hover:underline font-medium inline-block"
       >
-        See All Blogs →
+        Explore Templates →
       </Link>
     </section>
   );
