@@ -6,7 +6,7 @@ const projects = [
   {
     name: "LearnTrack ",
     description:
-      "Never write from scratch again. Kickstart your next great writing piece with Moonbeam. Your long-form writing AI assistant.",
+      "An online learning platform that helps users track their progress, set goals, and stay motivated throughout their educational journey.",
     tags: ["Backend", "Node.js", "Express", "MongoDB","razorpay"],
     url: "https://github.com/RRashmipanda/LearnTrack",
     icon: "📝",
@@ -14,7 +14,7 @@ const projects = [
   {
     name: "Vide_editor ",
     description:
-      "Building modern applications that scale well and are easy to maintain. Cutting edge websites with a pinch of magic, and a lot of love.",
+      "Ai-powered video editing platform that simplifies the video creation process with intuitive tools and smart features.",
     tags: ["Next.js", "React", "TailwindCSS", "prisma","ollama","shadcn/ui","mongoDB","authjs"],
     url: "https://github.com/RRashmipanda/vide_editor",
     icon: "✨",
@@ -22,7 +22,7 @@ const projects = [
   {
     name: "Animal Aid",
     description:
-      "Practice the most popular algorithmic questions and Front-end interview questions with an interactive IDE and learning environment.",
+      "A compassionate platform dedicated to rescuing, rehabilitating, and rehoming animals in need, while promoting animal welfare and responsible pet ownership.",
     tags: [ "React", "TailwindCSS", "TypeScript","MongoDB","Node.js","Express","cloudinary"],
     url: "https://github.com/RRashmipanda/ANIMALAID_CLIENT",
     icon: "💻",
@@ -30,7 +30,7 @@ const projects = [
   {
     name: "Blogvibe ",
     description:
-      "Beautiful, Handcrafted, ready-to-use components and templates for your next Tailwind web app project.",
+      "A blogging platform that allows users to create, share, and discover engaging content across various topics and interests.",
     tags: ["Backend", "Node.js", "Express", "MongoDB","EJS","cloudinary","docker","aws"],
     url: "https://github.com/RRashmipanda/Blogvibe",
     icon: "🎨",

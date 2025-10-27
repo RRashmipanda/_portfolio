@@ -6,57 +6,54 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    name: "Moonbeam",
+    name: "PMP",
     description:
-      "Never write from scratch again. Kickstart your next great writing piece with Moonbeam. Your long-form writing AI assistant.",
-    tags: ["Front-end", "GPT-3", "Next.js", "React", "TailwindCSS", "Chrome Extension"],
-    url: "https://example.com",
-    github: "https://github.com",
+      "project management platform that streamlines team collaboration, task tracking, and project planning for enhanced productivity.",
+    tags: ["Backend", "Node.js","Typescript", "Express", "MongoDB","razorpay"],
+    url: "https://github.com/RRashmipanda/pmp",
     icon: "📝",
   },
   {
-    name: "Aceternity",
+    name: "Easy Resume Maker",
     description:
-      "Building modern applications that scale well and are easy to maintain. Cutting edge websites with a pinch of magic, and a lot of love.",
+      "AI-powered resume builder that helps users create professional resumes quickly and easily.",
     tags: ["Next.js", "React", "TailwindCSS", "Full-Stack"],
-    url: "https://example.com",
-    github: "https://github.com",
+    url: "https://github.com/RRashmipanda/EasyResumeMaker",
+    github: "https://github.com/RRashmipanda/EasyResumeMaker",
     icon: "✨",
   },
   {
-    name: "Algochurn",
+    name: "Animal Aid",
     description:
-      "Practice the most popular algorithmic questions and Front-end interview questions with an interactive IDE and learning environment.",
-    tags: ["Next.js", "React", "TailwindCSS", "Monaco", "Algorithms"],
-    url: "https://example.com",
-    github: "https://github.com",
+      "A compassionate platform dedicated to rescuing, rehabilitating, and rehoming animals in need, while promoting animal welfare and responsible pet ownership.",
+    tags: [ "React", "TailwindCSS", "TypeScript","MongoDB","Node.js","Express","cloudinary"],
+    url: "https://github.com/RRashmipanda/ANIMALAID_CLIENT",
     icon: "💻",
   },
   {
-    name: "Tailwind Master Kit",
+    name: "E-Voting System",
     description:
-      "Beautiful, Handcrafted, ready-to-use components and templates for your next Tailwind web app project.",
+      "A secure and transparent e-voting system that enables users to cast their votes online with confidence and ease.",
     tags: ["TailwindCSS", "Components", "Templates"],
-    url: "https://example.com",
-    github: "https://github.com",
-    icon: "🎨",
+    url: "https://github.com/RRashmipanda/E-Voting",
+    github: "https://github.com/RRashmipanda/E-Voting",
+    icon: "🗳️",
   },
   {
-    name: "DevTools Pro",
+    name: "Vide_editor ",
     description:
-      "A comprehensive suite of developer tools to boost your productivity and streamline your workflow.",
-    tags: ["TypeScript", "React", "Node.js", "Developer Tools"],
-    url: "https://example.com",
-    github: "https://github.com",
-    icon: "🔧",
+      "Ai-powered video editing platform that simplifies the video creation process with intuitive tools and smart features.",
+    tags: ["Next.js", "React", "TailwindCSS", "prisma","ollama","shadcn/ui","mongoDB","authjs"],
+    url: "https://github.com/RRashmipanda/vide_editor",
+    icon: "✨",
   },
   {
-    name: "Portfolio Generator",
+    name: "Giffy",
     description:
-      "Create stunning portfolio websites in minutes with our AI-powered generator. No coding required.",
+      "An AI-powered GIF generator that creates fun and engaging GIFs from user inputs.",
     tags: ["AI", "Next.js", "TailwindCSS", "Web Generator"],
-    url: "https://example.com",
-    github: "https://github.com",
+    url: "rrgiphy.netlify.app",
+    github: "https://github.com/RRashmipanda/Giffy",
     icon: "🎯",
   },
 ];
