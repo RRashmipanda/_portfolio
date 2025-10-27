@@ -1,164 +1,180 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { Link } from "react-router-dom";
 import {
-  Grid,
-  ShoppingBag,
-  Briefcase,
-  GraduationCap,
-  Users,
-  Stethoscope,
-  Music,
-  ExternalLink,
-  Play,
+  Copy,
+  Check,
+  Layout,
+  User,
+  LogIn,
+  LogOut,
+  Loader,
+  Home,
+  Menu,
 } from "lucide-react";
 
-const templates = [
+const components = [
   {
-    id: "ecommerce",
-    title: "E-commerce Starter",
-    tagline: "Product catalog, cart, checkout & admin UI",
-    description:
-      "Product grid, filters, product detail, cart, checkout flow and a lightweight admin dashboard for managing products and orders.",
-    features: [
-      "Product grid + filters",
-      "Cart & checkout components",
-      "Admin product CRUD pages",
-      "Payment / order status UI",
-    ],
-    preview: "https://your-live-site.com/ecommerce",
-    repo: "https://github.com/your-org/ecommerce-starter",
-    icon: <ShoppingBag size={36} className="text-gray-500 dark:text-gray-400" />,
+    id: "navbar",
+    title: "Navbar",
+    description: "Responsive navigation bar with logo, links and menu toggle.",
+    preview: (
+      <div className="flex justify-between items-center px-4 py-3 bg-gray-100 dark:bg-gray-800 rounded-md">
+        <div className="font-bold text-gray-800 dark:text-gray-100">Brand</div>
+        <div className="hidden md:flex gap-4 text-gray-600 dark:text-gray-300">
+          <a href="#">Home</a>
+          <a href="#">Features</a>
+          <a href="#">Contact</a>
+        </div>
+        <button className="md:hidden">
+          <Menu size={20} />
+        </button>
+      </div>
+    ),
+    code: `
+<nav className="flex justify-between items-center px-4 py-3 bg-gray-100 dark:bg-gray-800 rounded-md">
+  <div className="font-bold text-gray-800 dark:text-gray-100">Brand</div>
+  <div className="hidden md:flex gap-4 text-gray-600 dark:text-gray-300">
+    <a href="#">Home</a>
+    <a href="#">Features</a>
+    <a href="#">Contact</a>
+  </div>
+  <button className="md:hidden">
+    <Menu size={20} />
+  </button>
+</nav>
+    `.trim(),
+    icon: <Layout size={32} className="text-gray-500 dark:text-gray-400" />,
   },
   {
-    id: "portfolio",
-    title: "Portfolio Starter",
-    tagline: "Showcase projects — fast and beautiful",
-    description:
-      "Hero, project gallery, case-study layout, blog list and contact form — perfect for developers & designers.",
-    features: ["Hero + CTA", "Project gallery", "Lightbox & case studies", "Blog listing"],
-    preview: "https://your-live-site.com/portfolio",
-    repo: "https://github.com/your-org/portfolio-starter",
-    icon: <Briefcase size={36} className="text-gray-500 dark:text-gray-400" />,
+    id: "hero",
+    title: "Hero Section",
+    description: "A clean hero section with heading, subtext and CTA button.",
+    preview: (
+      <div className="text-center py-10 bg-gray-50 dark:bg-gray-900 rounded-md">
+        <h2 className="text-2xl font-bold mb-2 dark:text-white">
+          Build beautiful UIs faster
+        </h2>
+        <p className="text-gray-600 dark:text-gray-400 mb-4">
+          Use ready-made Tailwind components and speed up development.
+        </p>
+        <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+          Get Started
+        </button>
+      </div>
+    ),
+    code: `
+<section className="text-center py-10 bg-gray-50 dark:bg-gray-900 rounded-md">
+  <h2 className="text-2xl font-bold mb-2 dark:text-white">Build beautiful UIs faster</h2>
+  <p className="text-gray-600 dark:text-gray-400 mb-4">Use ready-made Tailwind components and speed up development.</p>
+  <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Get Started</button>
+</section>
+    `.trim(),
+    icon: <Home size={32} className="text-gray-500 dark:text-gray-400" />,
   },
   {
-    id: "lms",
-    title: "LMS / Course Platform",
-    tagline: "Courses, progress, quizzes & admin",
-    description:
-      "Course catalog, learning player, progress tracking, quizzes and an instructor admin area to upload content and manage students.",
-    features: [
-      "Course catalog",
-      "Video player + progress",
-      "Quizzes & scoring",
-      "Instructor dashboard",
-    ],
-    preview: "https://your-live-site.com/lms",
-    repo: "https://github.com/your-org/lms-starter",
-    icon: <GraduationCap size={36} className="text-gray-500 dark:text-gray-400" />,
+    id: "signin",
+    title: "Sign In Form",
+    description: "Simple login form with email and password fields.",
+    preview: (
+      <form className="p-6 bg-gray-50 dark:bg-gray-900 rounded-md space-y-3">
+        <input
+          type="email"
+          placeholder="Email"
+          className="w-full p-2 border rounded-md bg-white dark:bg-gray-800 dark:border-gray-700"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          className="w-full p-2 border rounded-md bg-white dark:bg-gray-800 dark:border-gray-700"
+        />
+        <button className="w-full py-2 bg-blue-600 text-white rounded-md">
+          Sign In
+        </button>
+      </form>
+    ),
+    code: `
+<form className="p-6 bg-gray-50 dark:bg-gray-900 rounded-md space-y-3">
+  <input type="email" placeholder="Email" className="w-full p-2 border rounded-md bg-white dark:bg-gray-800 dark:border-gray-700" />
+  <input type="password" placeholder="Password" className="w-full p-2 border rounded-md bg-white dark:bg-gray-800 dark:border-gray-700" />
+  <button className="w-full py-2 bg-blue-600 text-white rounded-md">Sign In</button>
+</form>
+    `.trim(),
+    icon: <LogIn size={32} className="text-gray-500 dark:text-gray-400" />,
   },
   {
-    id: "social",
-    title: "Social Media Starter",
-    tagline: "Feed, profiles, posts & realtime reactions",
-    description:
-      "Social feed, profile pages, post composer, likes/comments, and a simple realtime layer for reactions and notifications.",
-    features: ["Feed & composer", "Profiles", "Notifications", "Realtime reactions"],
-    preview: "https://your-live-site.com/social",
-    repo: "https://github.com/your-org/social-starter",
-    icon: <Users size={36} className="text-gray-500 dark:text-gray-400" />,
-  },
-  {
-    id: "medical",
-    title: "Medical / Health App",
-    tagline: "Appointments, prescriptions & patient records",
-    description:
-      "Doctor search, appointment booking, teleconsult UI, patient records and prescriptions — HIPAA-aware UI patterns (implement protections on backend).",
-    features: ["Doctor directory", "Booking flow", "Patient records UI", "Teleconsult screens"],
-    preview: "https://your-live-site.com/medical",
-    repo: "https://github.com/your-org/medical-starter",
-    icon: <Stethoscope size={36} className="text-gray-500 dark:text-gray-400" />,
-  },
-  {
-    id: "gaana",
-    title: "Music / Gaana-style App",
-    tagline: "Playlists, player, library & now playing",
-    description:
-      "Music library, playlist management, persistent audio player, and discovery screens — built for mobile and desktop web.",
-    features: ["Persistent player", "Playlists & library", "Discovery modules", "Now playing UI"],
-    preview: "https://your-live-site.com/gaana",
-    repo: "https://github.com/your-org/gaana-starter",
-    icon: <Music size={36} className="text-gray-500 dark:text-gray-400" />,
+    id: "loader",
+    title: "Loader",
+    description: "Simple animated loader with Tailwind CSS.",
+    preview: (
+      <div className="flex justify-center items-center py-10">
+        <div className="w-6 h-6 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    ),
+    code: `
+<div className="flex justify-center items-center py-10">
+  <div className="w-6 h-6 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+</div>
+    `.trim(),
+    icon: <Loader size={32} className="text-gray-500 dark:text-gray-400" />,
   },
 ];
 
-const TemplateCard = ({ t }: { t: (typeof templates)[0] }) => (
-  <div className="rounded-2xl border bg-white dark:bg-gray-900 dark:border-gray-700 p-6 hover:shadow-lg transition-shadow duration-200">
-    <div className="flex items-start justify-between gap-4">
-      <div className="flex-1">
-        <h3 className="text-xl font-semibold mb-1 text-gray-900 dark:text-gray-100">{t.title}</h3>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">{t.tagline}</p>
-        <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">{t.description}</p>
+const ComponentCard = ({ c }: { c: (typeof components)[0] }) => {
+  const [copied, setCopied] = useState(false);
 
-        <ul className="flex flex-wrap gap-2 mb-4">
-          {t.features.map((f) => (
-            <li
-              key={f}
-              className="text-xs px-2 py-1 rounded-md border text-gray-500 dark:text-gray-400 dark:border-gray-700"
-            >
-              {f}
-            </li>
-          ))}
-        </ul>
+  const handleCopy = () => {
+    navigator.clipboard.writeText(c.code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
-        <div className="flex flex-wrap gap-2">
-          {t.preview && (
-            <a
-              href={t.preview}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium px-3 py-2 rounded-md border hover:bg-gray-50 dark:hover:bg-gray-800 dark:border-gray-700"
-            >
-              <Play size={14} /> Preview
-            </a>
-          )}
-          {t.repo && (
-            <a
-              href={t.repo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium px-3 py-2 rounded-md border hover:bg-gray-50 dark:hover:bg-gray-800 dark:border-gray-700"
-            >
-              <ExternalLink size={14} /> Repo
-            </a>
-          )}
+  return (
+    <div className="rounded-2xl border bg-white dark:bg-gray-900 dark:border-gray-700 p-6 hover:shadow-lg transition-shadow duration-200">
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-3">
+          {c.icon}
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+            {c.title}
+          </h3>
         </div>
+        <button
+          onClick={handleCopy}
+          className="flex items-center gap-1 text-sm border px-3 py-1.5 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800"
+        >
+          {copied ? <Check size={14} /> : <Copy size={14} />}
+          {copied ? "Copied" : "Copy"}
+        </button>
       </div>
 
-      {/* Right-side icon box */}
-      <div className="shrink-0 ml-4 hidden md:block">
-        <div className="w-36 h-24 rounded-lg bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900 border dark:border-gray-700 flex items-center justify-center">
-          {t.icon || <Grid size={36} className="text-gray-500 dark:text-gray-400" />}
-        </div>
+      <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+        {c.description}
+      </p>
+
+      <div className="border rounded-md p-4 bg-gray-50 dark:bg-gray-800 mb-4">
+        {c.preview}
       </div>
+
+      <pre className="text-xs bg-gray-100 dark:bg-gray-950 p-3 rounded-md overflow-x-auto text-gray-800 dark:text-gray-200">
+        <code>{c.code}</code>
+      </pre>
     </div>
-  </div>
-);
+  );
+};
 
 const Blog = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
-        <h1 className="text-5xl font-bold mb-6 dark:text-gray-100">Starter Templates</h1>
+        <h1 className="text-5xl font-bold mb-6 dark:text-gray-100">UI Vault</h1>
         <p className="text-lg text-gray-600 dark:text-gray-400 mb-12">
-          Ready-to-use UI starter packs for different app types.
+          Ready-to-copy Tailwind UI components for faster prototyping.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {templates.map((t) => (
-            <TemplateCard key={t.id} t={t} />
+          {components.map((c) => (
+            <ComponentCard key={c.id} c={c} />
           ))}
         </div>
       </main>
