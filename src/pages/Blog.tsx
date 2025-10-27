@@ -400,7 +400,7 @@ const CodeBlock: React.FC<{ children: string }> = ({ children }) => (
 /* -----------------------
    Main page component
    ----------------------- */
-const Blog: React.FC = () => {
+const Uivaults: React.FC = () => {
   const [openCode, setOpenCode] = useState<Record<string, boolean>>({});
   const [codeTab, setCodeTab] = useState<Record<string, "react" | "html">>({});
   const [copiedMap, setCopiedMap] = useState<Record<string, string>>({});
@@ -557,4 +557,4 @@ const Blog: React.FC = () => {
   );
 };
 
-export default Blog;
+export default Uivaults ;

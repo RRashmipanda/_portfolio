@@ -45,10 +45,10 @@ export const RecentBlogs = () => {
         ))}
       </div>
       <Link
-        to="/blog"
+        to="/uivaults"
         className="text-accent hover:underline font-medium inline-block"
       >
-        Explore Templates →
+        Explore Components →
       </Link>
     </section>
   );
