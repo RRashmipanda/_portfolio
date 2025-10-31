@@ -10,28 +10,20 @@ export const Hero = () => {
           <p className="text-xl text-foreground mb-2">
             Building{" "}
             <a
-              href="https://example.com"
+              href="https://github.com/RRashmipanda"
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold hover:underline"
             >
               Amazing Projects
             </a>
-            ,{" "}
-            <a
-              href="https://example.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold hover:underline"
-            >
-              Cool Products
-            </a>{" "}
-            & other cool things
+            
+            , other cool things
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
             Fullstack developer building SaaS products and web apps. Find me on{" "}
             <a
-              href="https://www.linkedin.com/in/rashmi-ranjan-panda-5b3776209?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              href="https://www.linkedin.com/in/rashmi-ranjan-panda-5b3776209"
               target="_blank"
               rel="noopener noreferrer"
               className="text-accent hover:underline inline-flex items-center gap-1"
@@ -43,7 +35,7 @@ export const Hero = () => {
           </p>
         </div>
        <div className="shrink-0 flex flex-col items-center">
-  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+  <a href="https://x.com/PandaRashm16540?t=flqtqnmmlkVZIhblGaoAsA&s=08" target="_blank" rel="noopener noreferrer">
     <img
       src={"/photo.jpg"}
       alt="Profile"
